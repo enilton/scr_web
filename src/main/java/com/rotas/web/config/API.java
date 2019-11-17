@@ -7,7 +7,8 @@ import java.net.URL;
 public class API {
 	
 	public static HttpURLConnection getAPI(String rota) throws IOException {
-		URL url = new URL("http://localhost:8080/api/" + rota);
+		//URL url = new URL("http://localhost:8080/api/" + rota);
+		URL url = new URL("http://eniltonscrapi.herokuapp.com/api/" + rota);
         return (HttpURLConnection) url.openConnection();
 	}
 
