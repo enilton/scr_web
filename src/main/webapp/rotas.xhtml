@@ -1,0 +1,60 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta charset="utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet"
+		href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+	<style>
+body {
+	padding: 0;
+	margin: 0;
+}
+
+html, body, #map {
+	height: 100%;
+}
+</style>
+</h:head>
+<f:event listener="#{rotaBean.listarTodas()}" type="preRenderView" />
+<h:body>
+	<h:form id="formCadastroRotas">		
+	<p:fieldset legend="Manter Rotass">
+		<p:outputLabel value="#{rotaBean.mensagem}" />	
+		<br/>
+		<p:fieldset legend="Incluir Rotas">
+			<p:panelGrid columns="2">
+				<p:outputLabel value="Nome:" />	
+				<p:inputText id="nome" value="#{rotaBean.nome}"/>
+			</p:panelGrid>	
+			<br/>
+			<p:toolbar>
+				<p:toolbarGroup align="left">
+					<p:commandButton value="Salvar" action="#{rotaBean.incluir()}" update=":formCadastroRotas" ></p:commandButton>
+				</p:toolbarGroup>			
+			</p:toolbar>	
+		</p:fieldset>
+		<br/>
+		<p:fieldset legend="Rotass">
+			<p:dataTable value="#{rotaBean.rotas}" var="rotaItem" emptyMessage="Nenhuma Rota Cadastrada">
+				<p:column headerText="Nome">
+					<h:outputText value="#{rotaItem.nome}"/>
+				</p:column>
+			</p:dataTable>		
+		</p:fieldset>
+				
+	</p:fieldset>
+	<br/>
+		
+		
+		<div id="map"></div>
+		<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+		<script src="scripts.js"></script>
+	</h:form>
+
+</h:body>
+</html>

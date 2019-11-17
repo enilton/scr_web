@@ -1,17 +1,35 @@
-<html xmlns="http://www.w3.org/1999/xhtml"  
-    xmlns:h="http://java.sun.com/jsf/html"  
-    xmlns:f="http://java.sun.com/jsf/core"  
-    xmlns:p="http://primefaces.org/ui">  
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 
-    <h:head>  
+<h:head>
+	<meta charset="utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<style>
+		body {
+			padding: 0;
+			margin: 0;
+		}
+		
+		html, body, #map {
+			height: 100%;
+		}
+	</style>
+</h:head>
+<h:body>
+	<h:form id="formCadastroGeradora">
+		<p:fieldset legend="Menu Principal">
+			<p:toolbar>
+				<p:toolbarGroup align="left">
+					<p:commandLink value="Manter Geradoras" action="geradoras?faces-redirect-true"/>
+					<p:outputLabel value="  - "></p:outputLabel>
+					<p:commandLink value="Manter Rotas" action="rotas?faces-redirect-true"/>						
+				</p:toolbarGroup>
+			</p:toolbar>
+		</p:fieldset>
+	</h:form>
 
-    </h:head>  
-
-    <h:body>  
-
-      	<p:outputLabel value="Olá Prime Faces" />
-
-        <p:spinner />  
-
-    </h:body>  
+</h:body>
 </html>
