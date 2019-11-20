@@ -26,6 +26,7 @@ public class GeradoraManagedBean implements java.io.Serializable {
 			this.setGeradoras(geradoraService.listarTodas());			
 			this.setMensagem("Geradoras Carregadas ");
 		} catch (Exception e) {
+			//tratamemto de mensagem temporário
 			this.setMensagem("Falha ao carregar geradoras: " + e.getMessage());			
 		}	
 	}
@@ -37,6 +38,7 @@ public class GeradoraManagedBean implements java.io.Serializable {
 			geradora = new Geradora(); 
 			this.setMensagem("Geradora Criada");
 		} catch (Exception e) {
+			//tratamemto de mensagem temporário
 			this.setMensagem("Falha ao incluir geradora: " + e.getMessage());			
 		}		
 	}

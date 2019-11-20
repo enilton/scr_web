@@ -73,7 +73,7 @@ public class GeradoraService {
 			while ((responseLine = br.readLine()) != null) {
 				response.append(responseLine.trim());
 			}
-			//System.out.println(response.toString());
+			
 			return gson.fromJson(response.toString(), Geradora.class);
 		}
 	}

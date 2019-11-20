@@ -26,6 +26,7 @@ public class RotaManagedBean implements java.io.Serializable {
 			this.setRotas(rotaService.listarTodas());			
 			this.setMensagem("Rotas Carregadas ");
 		} catch (Exception e) {
+			//tratamemto de mensagem temporário
 			this.setMensagem("Falha ao carregar rotas: " + e.getMessage());			
 		}	
 	}
@@ -37,6 +38,7 @@ public class RotaManagedBean implements java.io.Serializable {
 			rota = new Rota(); 
 			this.setMensagem("Rota Criada");
 		} catch (Exception e) {
+			//tratamemto de mensagem temporário
 			this.setMensagem("Falha ao incluir rota: " + e.getMessage());			
 		}		
 	}
